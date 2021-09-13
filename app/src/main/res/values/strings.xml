@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Booking</string>
+    <string name="date">Choose Date</string>
+    <string name="time">Choose Time</string>
+    <string name="calendar">Calendar</string>
+    <string name="morning">Morning</string>
+    <string name="afternoon">Afternoon</string>
+    <string name="evening">Evening</string>
+    <string name="bookingDetails">Booking Details :</string>
+    <string name="booking">Book Now</string>
+    <string name="cancel">Cancel</string>
+    <string name="edt_date">Enter your date</string>
+    <string name="time1">9 AM</string>
+    <string name="time2">10 AM</string>
+    <string name="time3">11 AM</string>
+    <string name="done">Done</string>
+    <string name="timeTitle">Choose the time</string>
+    <string name="time4">12 PM</string>
+    <string name="time5">1 PM</string>
+    <string name="time6">2 PM</string>
+    <string name="time7">5 PM</string>
+    <string name="time8">6 PM</string>
+    <string name="time9">7 PM</string>
+    <string name="wait">Waiting for more infromation</string>
+</resources>
