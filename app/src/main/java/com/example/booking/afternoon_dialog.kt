@@ -9,6 +9,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import kotlinx.android.synthetic.main.fragment_booking.*
 
 class AfternoonDialog : DialogFragment() {
     override fun onCreateView(
@@ -22,7 +23,7 @@ class AfternoonDialog : DialogFragment() {
         var radioGroup2 = rootView2.findViewById<RadioGroup>(R.id.radioGroup2)
 
         btnCancel.setOnClickListener {
-            binding.btnBook.setVisibility(View.GONE)
+            btn_book.setVisibility(View.GONE)
             Toast.makeText(context, "Don't forget to choose time", Toast.LENGTH_LONG).show()
             dismiss()
         }
@@ -32,10 +33,10 @@ class AfternoonDialog : DialogFragment() {
             var timeResult = radio.text.toString()
             Toast.makeText(context, "You choose $timeResult", Toast.LENGTH_LONG).show()
             dismiss()
-            binding.btnBook.setVisibility(View.VISIBLE)
+            btn_book.setVisibility(View.VISIBLE)
             //Booking details text
-            binding.txtBookingDetails.text =
-                "You will book an appointment with Doctor/" + "The date you have chosen is : ${binding.edtDate.text.toString()} at $timeResult"
+            txt_bookingDetails.text =
+                "You will book an appointment with Doctor/" + "The date you have chosen is : ${edt_date.text.toString()} at $timeResult"
         }
 
         return rootView2

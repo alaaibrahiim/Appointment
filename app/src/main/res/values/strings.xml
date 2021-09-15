@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Booking</string>
+    <string name="app_name">Dental Care</string>
     <string name="date">Choose Date</string>
     <string name="time">Choose Time</string>
     <string name="calendar">Calendar</string>
@@ -21,5 +21,20 @@
     <string name="time7">5 PM</string>
     <string name="time8">6 PM</string>
     <string name="time9">7 PM</string>
-    <string name="wait">Waiting for more infromation</string>
+    <string name="wait">Waiting for more information</string>
+    <string name="categories">Categories</string>
+    <string name="todo">TODO</string>
+    <string name="textview1">TextView</string>
+    <string name="textview2">TextView</string>
+    <string name="new_acc">Create New Account</string>
+    <string name="signup">Sign up</string>
+    <string name="next">Next</string>
+    <string name="App_desc">This application will help you find the best dentist at the price you prefer and will allow you to book your appointment with ease. We hope you enjoy our app! </string>
+    <string name="welcome">Welcome back!</string>
+    <string name="email">Enter your Email</string>
+    <string name="password">Enter your password</string>
+    <string name="login">Login</string>
+    <string name="txtsignup">Do not have an account?</string>
+    <string name="doctorname">Doctor Name</string>
+
 </resources>
