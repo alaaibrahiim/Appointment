@@ -5,50 +5,45 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
-    var onItemCategories:OnCategoriesClick?= null
+class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.UserViewHolder>() {
 
-    private val fname:Array<String> = arrayOf("Dental checkup","Dental crown","Tooth implant","Dental care")
-    private val pics:IntArray = intArrayOf(R.drawable.img1,R.drawable.img2,R.drawable.img3,R.drawable.img4)
+    var onCategoryClick:OnCategoryClick?=null
+    var categoryList:ArrayList<Category> = ArrayList()
 
-
-    inner class ViewHolder (itemView: View): RecyclerView.ViewHolder(itemView){
-        var  image : ImageView = itemView.findViewById(R.id.imageView)
-        var fname : TextView = itemView.findViewById(R.id.textView)
-
-
-
-        //init {
-          // itemView.setOnClickListener{v: View ->
-             //  val position:Int = adapterPosition
-             //   Toast.makeText(itemView.context,"you clicked on item #${position + 1}", Toast.LENGTH_SHORT).show()
-
-          //  }
-      // }
-
-
+    fun setList(categoryList:ArrayList<Category>){
+        this.categoryList=categoryList
+        notifyDataSetChanged()
     }
 
+    inner class UserViewHolder(itemView:View):RecyclerView.ViewHolder(itemView) {
+        var iv_img:ImageView=itemView.findViewById(R.id.imageView)
+        var tv_categoryname:TextView=itemView.findViewById(R.id.textView)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.rawan_layout,parent,false)
-        return ViewHolder(v)
+
+        fun bind(category: Category){
+            iv_img.setImageResource(category.img)
+            tv_categoryname.text=category.name
+
+            itemView.setOnClickListener {
+                onCategoryClick?.onItemCategoryClick(category)
+            }
+        }
     }
 
-    override fun getItemCount () : Int {
-        return fname.size
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
+        var view:View =LayoutInflater.from(parent.context).inflate(R.layout.list_item,parent,false)
+        return UserViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        //holder.fname.text=fname[position]
-        //holder.image.setImageResource(pics[position])
+    override fun getItemCount(): Int {
+        return categoryList.size
+    }
 
-
-
+    override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
+        var category:Category=categoryList.get(position)
+        holder.bind(category)
     }
 
 }

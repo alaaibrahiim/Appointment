@@ -11,13 +11,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.booking.databinding.FragmentDoctorsBinding
 
 
-class DoctorsFragment : Fragment(), onListItemClick {
-    var data = ArrayList<User>()
+class DoctorsFragment: Fragment(), onListItemClick {
+    //var data = ArrayList<User>()
     val userRecyclerView: UserRecyclerView by lazy {
-        UserRecyclerView(data)
+        UserRecyclerView()
     }
-
+    var userList: ArrayList<User> = ArrayList()
     lateinit var binding: FragmentDoctorsBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,19 +34,20 @@ class DoctorsFragment : Fragment(), onListItemClick {
         binding.rvShowData.layoutManager = LinearLayoutManager(context)
 
         for (i in 0..10) {
-            data.add(User("DoctorName" + i, "Address " + i, R.drawable.doctor3))
+            userList.add(User("DoctorName" + i, "Address " + i, R.drawable.doctor3))
+            userRecyclerView.setList(userList)
         }
         binding.rvShowData.adapter = userRecyclerView
 
 
         userRecyclerView.onListItemClick = this
 
+        //  rv_showData = findViewById(R.id.rv_showData)
     }
 
     override fun onItemClick(user: User) {
         Toast.makeText(context, "more about  ${user.name}", Toast.LENGTH_LONG).show()
-
-        var action=DoctorsFragmentDirections.actionDoctorsFragmentToDoctorProfileFragment()
+        var action = DoctorsFragmentDirections.actionDoctorsFragmentToDoctorProfileFragment()
         findNavController().navigate(action)
     }
 }

@@ -7,8 +7,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class UserRecyclerView(private val userList: List<User>) :
+class UserRecyclerView :
     RecyclerView.Adapter<UserRecyclerView.UserViewHolder>() {
+
+    var userList:ArrayList<User> = ArrayList()
+
+    fun setList(userList:ArrayList<User>){
+        this.userList=userList
+        notifyDataSetChanged()
+    }
 
     var onListItemClick: onListItemClick? = null
 
@@ -31,7 +38,7 @@ class UserRecyclerView(private val userList: List<User>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val view: View =
-            LayoutInflater.from(parent.context).inflate(R.layout.basma_layout, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
         return UserViewHolder(view)
     }
 

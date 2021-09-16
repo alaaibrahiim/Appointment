@@ -7,17 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.example.booking.databinding.WelcomeFragmentBinding
+import com.example.booking.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
-    lateinit var binding: WelcomeFragmentBinding
+    lateinit var binding: FragmentWelcomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = WelcomeFragmentBinding.inflate(inflater, container, false)
+        binding = FragmentWelcomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 

@@ -20,7 +20,7 @@
         <item name="android:typeface">serif</item>
 
     </style>
-    <style name="passwordstyle">
+    <style name="passwordStyle">
         <item name="android:layout_margin">5dp</item>
         <item name="android:padding">10dp</item>
         <item name="android:textSize">15sp</item>

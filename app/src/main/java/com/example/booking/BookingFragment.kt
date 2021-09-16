@@ -13,7 +13,7 @@ import com.example.booking.databinding.FragmentBookingBinding
 import java.text.DateFormat
 import java.util.*
 
-class BookingFragment : Fragment()   {
+class BookingFragment : Fragment() {
     lateinit var binding: FragmentBookingBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,10 +39,10 @@ class BookingFragment : Fragment()   {
 
             val dpd = DatePickerDialog(
                 //context
-               requireContext(),
+                requireContext(),
                 DatePickerDialog.OnDateSetListener { view: DatePicker, mYear: Int, mMonth: Int, mDay: Int ->
                     val mmMonth = mMonth + 1
-                    binding.edtDate.setText("" + mDay + "/" + mmMonth + "/" + mYear)
+                    binding.edtDate.setText("$mDay/$mmMonth/$mYear")
 
                 },
                 year,
@@ -74,20 +74,18 @@ class BookingFragment : Fragment()   {
         //Morning time
         binding.btnMorning.setOnClickListener {
             var dialog1 = MorningDialog()
-            dialog1.showsDialog
+            dialog1.show(parentFragmentManager, "customDialog")
         }
         //Afternoon Time
         binding.btnAfternoon.setOnClickListener {
             var dialog2 = AfternoonDialog()
-            dialog2.showsDialog
+            dialog2.show(parentFragmentManager, "customDialog")
         }
 
         //Evening Time
         binding.btnEvening.setOnClickListener {
             var dialog3 = EveningDialog()
-            dialog3.showsDialog
-           // dialog3.show(supportFragmentManager, "customDialog")
-        }
+            dialog3.show(parentFragmentManager, "customDialog")        }
 
 
         //Booking button
@@ -96,37 +94,50 @@ class BookingFragment : Fragment()   {
             if (!validate()) {
                 Toast.makeText(context, "Booking Failed", Toast.LENGTH_LONG).show()
             } else {
-                Toast.makeText(context, "Booking successful", Toast.LENGTH_LONG).show()
+                val eBuilder = AlertDialog.Builder(context)
+                eBuilder.setTitle("Complete!")
+                eBuilder.setIcon(R.drawable.confirmation)
+                eBuilder.setMessage("Your request has successfully been submitted , We'll see you soon!")
+                eBuilder.setPositiveButton("Ok") { Dialog, which ->
+                    finish()
 
+                }
+                val createBuild: AlertDialog = eBuilder.create()
+                createBuild.show()
             }
 
         }
-        //Exit button
-        binding.btnExit.setOnClickListener {
-            val eBuilder = AlertDialog.Builder(context)
-            eBuilder.setTitle("Exit")
-            eBuilder.setIcon(R.drawable.ic_exit)
-            eBuilder.setMessage("Are you sure you want to EXIT ?")
-            eBuilder.setPositiveButton("Yes") { Dialog, which ->
-                //finish()
-
-            }
-            eBuilder.setNegativeButton("No") { Dialog, which ->
-                Toast.makeText(
-                    context,
-                    "If you want to exit press this button again",
-                    Toast.LENGTH_LONG
-                ).show()
-
-            }
-            val createBuild: AlertDialog = eBuilder.create()
-            createBuild.show()
-        }
-
 
     }
 
-
-
+    private fun finish() {
+        finish()
+    }
 }
+
+    //Exit button
+/* binding.btnExit.setOnClickListener {
+     val eBuilder = AlertDialog.Builder(context)
+     eBuilder.setTitle("Exit")
+     eBuilder.setIcon(R.drawable.ic_exit)
+     eBuilder.setMessage("Are you sure you want to EXIT ?")
+     eBuilder.setPositiveButton("Yes") { Dialog, which ->
+         finish()
+
+     }
+     eBuilder.setNegativeButton("No") { Dialog, which ->
+         Toast.makeText(
+             context,
+             "If you want to exit press this button again",
+             Toast.LENGTH_LONG
+         ).show()
+
+     }
+     val createBuild: AlertDialog = eBuilder.create()
+     createBuild.show()
+ }
+
+
+}*/
+
 

@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.example.booking.databinding.FragmentDocotrProfileBinding
+import com.example.booking.databinding.FragmentDoctorProfileBinding
 
 class DoctorProfileFragment : Fragment() {
-    lateinit var binding: FragmentDocotrProfileBinding
+    lateinit var binding: FragmentDoctorProfileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -18,7 +18,7 @@ class DoctorProfileFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        binding = FragmentDocotrProfileBinding.inflate(inflater, container, false)
+        binding = FragmentDoctorProfileBinding.inflate(inflater, container, false)
         return binding.root
          }
 

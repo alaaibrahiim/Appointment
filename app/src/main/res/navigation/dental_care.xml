@@ -9,7 +9,7 @@
         android:id="@+id/welcomeFragment"
         android:name="com.example.booking.WelcomeFragment"
         android:label="fragment_welcome"
-        tools:layout="@layout/welcome_fragment" >
+        tools:layout="@layout/fragment_welcome" >
         <action
             android:id="@+id/action_welcomeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -57,7 +57,7 @@
         android:id="@+id/doctorProfileFragment"
         android:name="com.example.booking.DoctorProfileFragment"
         android:label="fragment_doctor_profile"
-        tools:layout="@layout/fragment_docotr_profile" >
+        tools:layout="@layout/fragment_doctor_profile" >
         <action
             android:id="@+id/action_doctorProfileFragment_to_bookingFragment"
             app:destination="@id/bookingFragment" />
@@ -80,13 +80,25 @@
     <dialog
         android:id="@+id/afternoonDialog"
         android:name="com.example.booking.AfternoonDialog"
-        android:label="AfternoonDialog" />
+        android:label="AfternoonDialog" >
+        <action
+            android:id="@+id/action_afternoonDialog_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </dialog>
     <dialog
         android:id="@+id/eveningDialog"
         android:name="com.example.booking.EveningDialog"
-        android:label="EveningDialog" />
+        android:label="EveningDialog" >
+        <action
+            android:id="@+id/action_eveningDialog_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </dialog>
     <dialog
         android:id="@+id/morningDialog"
         android:name="com.example.booking.MorningDialog"
-        android:label="MorningDialog" />
+        android:label="MorningDialog" >
+        <action
+            android:id="@+id/action_morningDialog_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </dialog>
 </navigation>
