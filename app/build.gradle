@@ -2,8 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'androidx.navigation.safeargs.kotlin'
-
-    //Rawan
     id 'kotlin-android-extensions'
 
 }
@@ -64,14 +62,13 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-//Rawan
+    //Recycler View
     implementation fileTree(dir: 'libs',includes: ['*.jar'])
     implementation"androidx.recyclerview:recyclerview:1.1.0"
     implementation "androidx.cardview:cardview:1.0.0"
     implementation"androidx.recyclerview:recyclerview-selection:1.1.0"
     implementation 'com.google.android.material:material:1.4.0'
 
-    //Ebtsam
     // country code picker
     implementation "com.hbb20:ccp:2.2.2"
 

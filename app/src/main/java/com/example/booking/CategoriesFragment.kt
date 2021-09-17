@@ -64,7 +64,6 @@ class CategoriesFragment : Fragment(), OnCategoryClick {
 
     }
 
-
     override fun onItemCategoryClick(category: Category) {
         Toast.makeText(context, "The category name is :${category.name}", Toast.LENGTH_SHORT).show()
         var action = CategoriesFragmentDirections.actionCategoriesFragmentToDoctorsFragment()
