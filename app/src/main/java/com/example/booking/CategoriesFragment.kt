@@ -44,7 +44,7 @@ class CategoriesFragment : Fragment(), OnCategoryClick {
                 else -> categoryList.add(
                     Category(
                         "Oral and Maxillofacial Surgery.",
-                        R.drawable.img
+                        R.drawable.img4
                     )
                 )
             }

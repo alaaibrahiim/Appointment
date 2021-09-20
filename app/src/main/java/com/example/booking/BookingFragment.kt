@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
 import android.widget.Toast
+import androidx.fragment.app.FragmentManager
 import com.example.booking.databinding.FragmentBookingBinding
 import java.text.DateFormat
 import java.util.*
@@ -26,7 +27,7 @@ class BookingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnBook.setVisibility(View.GONE)
+      //  binding.btnBook.setVisibility(View.GONE)
 
 
         //calendar button
@@ -73,19 +74,20 @@ class BookingFragment : Fragment() {
 
         //Morning time
         binding.btnMorning.setOnClickListener {
-            var dialog1 = MorningDialog()
-            dialog1.show(parentFragmentManager, "customDialog")
+            val dialog1 = MorningDialog()
+            dialog1.show(parentFragmentManager , "customDialog")
         }
         //Afternoon Time
         binding.btnAfternoon.setOnClickListener {
-            var dialog2 = AfternoonDialog()
+            val dialog2 = AfternoonDialog()
             dialog2.show(parentFragmentManager, "customDialog")
         }
 
         //Evening Time
         binding.btnEvening.setOnClickListener {
-            var dialog3 = EveningDialog()
-            dialog3.show(parentFragmentManager, "customDialog")        }
+            val dialog3 = EveningDialog()
+            dialog3.show(parentFragmentManager, "customDialog")
+        }
 
 
         //Booking button
@@ -99,7 +101,7 @@ class BookingFragment : Fragment() {
                 eBuilder.setIcon(R.drawable.confirmation)
                 eBuilder.setMessage("Your request has successfully been submitted , We'll see you soon!")
                 eBuilder.setPositiveButton("Ok") { Dialog, which ->
-                    finish()
+                    activity?.finish()
 
                 }
                 val createBuild: AlertDialog = eBuilder.create()
@@ -110,34 +112,5 @@ class BookingFragment : Fragment() {
 
     }
 
-    private fun finish() {
-        finish()
-    }
 }
-
-    //Exit button
-/* binding.btnExit.setOnClickListener {
-     val eBuilder = AlertDialog.Builder(context)
-     eBuilder.setTitle("Exit")
-     eBuilder.setIcon(R.drawable.ic_exit)
-     eBuilder.setMessage("Are you sure you want to EXIT ?")
-     eBuilder.setPositiveButton("Yes") { Dialog, which ->
-         finish()
-
-     }
-     eBuilder.setNegativeButton("No") { Dialog, which ->
-         Toast.makeText(
-             context,
-             "If you want to exit press this button again",
-             Toast.LENGTH_LONG
-         ).show()
-
-     }
-     val createBuild: AlertDialog = eBuilder.create()
-     createBuild.show()
- }
-
-
-}*/
-
 

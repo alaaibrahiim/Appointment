@@ -11,11 +11,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.booking.databinding.FragmentSignUpBinding
+import com.google.firebase.auth.FirebaseAuth
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
 class SignUpFragment : Fragment() {
     lateinit var binding: FragmentSignUpBinding
+    private lateinit var user:FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,15 +31,27 @@ class SignUpFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        user = FirebaseAuth.getInstance()
         binding.btnSignup.setOnClickListener {
 
             if (validate()) {
-                Toast.makeText(context, "Account created successfully", Toast.LENGTH_LONG).show()
+                val email = binding.edtEmail.text.toString()
+                val password = binding.edtPassword.text.toString()
+
+                user.createUserWithEmailAndPassword(email,password).addOnCompleteListener{
+                    task->
+                    if (task.isSuccessful){
+                        Toast.makeText(context, "Account created successfully", Toast.LENGTH_LONG).show()
+                        var action=SignUpFragmentDirections.actionSignUpFragmentToLoginFragment()
+                        findNavController().navigate(action)
+                    }else{
+                        Toast.makeText(context, "$email is already used", Toast.LENGTH_SHORT).show()
+                    }
+                }
 
             }
 
-            var action=SignUpFragmentDirections.actionSignUpFragmentToCategoriesFragment()
-            findNavController().navigate(action)
+
         }
         binding.checkBox.setOnClickListener {
             if (binding.checkBox.isChecked) {
@@ -106,6 +120,9 @@ class SignUpFragment : Fragment() {
             return false
         } else if (binding.edtPassword.text.toString().isEmpty()) {
             binding.edtPassword.error = "Password Required"
+            return false
+        }else if(binding.edtPassword.length()<6){
+            binding.edtPassword.error="Password must be > 6 characters"
             return false
         }
         return true

@@ -1,3 +1,4 @@
+
 package com.example.booking
 
 import android.os.Bundle
@@ -20,14 +21,13 @@ class DoctorProfileFragment : Fragment() {
 
         binding = FragmentDoctorProfileBinding.inflate(inflater, container, false)
         return binding.root
-         }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnNextbooking.setOnClickListener {
-            Toast.makeText(context, "Now ,You can book", Toast.LENGTH_LONG).show()
-
+        binding.button.setOnClickListener {
+            Toast.makeText(context,"success", Toast.LENGTH_LONG).show()
             var action=DoctorProfileFragmentDirections.actionDoctorProfileFragmentToBookingFragment()
             findNavController().navigate(action)
         }

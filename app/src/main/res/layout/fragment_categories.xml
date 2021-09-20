@@ -16,10 +16,10 @@
         android:ems="10"
         android:text="@string/categories"
         android:textAlignment="viewStart"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/my_color2"
         android:textDirection="firstStrongRtl"
         android:textSize="26sp"
-        android:textStyle="normal"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/recyclerView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

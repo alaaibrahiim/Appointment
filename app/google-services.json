@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1021126612053",
+    "project_id": "fir-login-signup-2f74b",
+    "storage_bucket": "fir-login-signup-2f74b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021126612053:android:4f847353ee908afb7370dc",
+        "android_client_info": {
+          "package_name": "com.example.booking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1021126612053-0q4b8pla651enns4ps29t49svvtirkfh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZDBLPjg9T_7LV80FOH8G2_Bo9r9DZW6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1021126612053-0q4b8pla651enns4ps29t49svvtirkfh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

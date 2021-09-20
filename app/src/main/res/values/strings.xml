@@ -35,6 +35,12 @@
     <string name="password">Enter your password</string>
     <string name="login">Login</string>
     <string name="txtsignup">Do not have an account?</string>
-    <string name="doctorname">Doctor Name</string>
+    <string name="doctorName">Doctor Name</string>
+    <string name="qoutes">Smiling is</string>
+    <string name="qoutes2">FUN</string>
+    <string name="qoutes3">With</string>
+    <string name="qoutes4">HEALTHY TEETH</string>
+    <string name="appointment">Appointment</string>
+    <string name="chkbx">Remember Me</string>
 
 </resources>

@@ -38,7 +38,7 @@ class UserRecyclerView :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val view: View =
-            LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.list_item_dr, parent, false)
         return UserViewHolder(view)
     }
 

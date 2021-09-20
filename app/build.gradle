@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-android-extensions'
+    id 'com.google.gms.google-services'
 
 }
 
@@ -19,7 +20,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding true
     }
 
@@ -36,18 +37,19 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    compileOptions{
+    compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    kotlinOptions{
-        jvmTarget=JavaVersion.VERSION_1_8.toString()
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
     def nav_version = "2.3.5"
 //Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
@@ -63,14 +65,16 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //Recycler View
-    implementation fileTree(dir: 'libs',includes: ['*.jar'])
-    implementation"androidx.recyclerview:recyclerview:1.1.0"
+    implementation fileTree(dir: 'libs', includes: ['*.jar'])
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation "androidx.cardview:cardview:1.0.0"
-    implementation"androidx.recyclerview:recyclerview-selection:1.1.0"
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
     implementation 'com.google.android.material:material:1.4.0'
 
     // country code picker
     implementation "com.hbb20:ccp:2.2.2"
+   //animationSplashScreen
+    implementation 'com.airbnb.android:lottie:3.4.0'
 
 
 }
