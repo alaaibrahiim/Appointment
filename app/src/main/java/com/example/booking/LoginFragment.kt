@@ -62,7 +62,7 @@ class LoginFragment : Fragment() {
                         Toast.makeText(context, "Logged as $email", Toast.LENGTH_LONG)
                             .show()
                         var action =
-                            LoginFragmentDirections.actionLoginFragmentToCategoriesFragment()
+                            LoginFragmentDirections.actionLoginFragmentToAuthenticationFragment()
                         findNavController().navigate(action)
                     } else {
                         Toast.makeText(

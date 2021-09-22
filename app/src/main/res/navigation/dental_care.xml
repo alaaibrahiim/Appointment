@@ -23,8 +23,8 @@
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_categoriesFragment"
-            app:destination="@id/categoriesFragment" />
+            android:id="@+id/action_loginFragment_to_authenticationFragment"
+            app:destination="@id/authenticationFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -53,6 +53,9 @@
         <action
             android:id="@+id/action_doctorsFragment_to_doctorProfileFragment"
             app:destination="@id/doctorProfileFragment" />
+        <action
+            android:id="@+id/action_doctorsFragment_to_addDoctorFragment"
+            app:destination="@id/addDoctorFragment" />
     </fragment>
     <fragment
         android:id="@+id/doctorProfileFragment"
@@ -62,10 +65,43 @@
         <action
             android:id="@+id/action_doctorProfileFragment_to_bookingFragment"
             app:destination="@id/bookingFragment" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.booking.User" />
     </fragment>
     <fragment
         android:id="@+id/bookingFragment"
         android:name="com.example.booking.BookingFragment"
         android:label="fragment_booking"
         tools:layout="@layout/fragment_booking" />
+    <fragment
+        android:id="@+id/authenticationFragment"
+        android:name="com.example.booking.AuthenticationFragment"
+        android:label="fragment_authentication"
+        tools:layout="@layout/fragment_authentication" >
+        <action
+            android:id="@+id/action_authenticationFragment_to_adminValidationFragment"
+            app:destination="@id/adminValidationFragment" />
+        <action
+            android:id="@+id/action_authenticationFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminValidationFragment"
+        android:name="com.example.booking.AdminValidationFragment"
+        android:label="fragment_admin_validation"
+        tools:layout="@layout/fragment_admin_validation" >
+        <action
+            android:id="@+id/action_adminValidationFragment_to_doctorsFragment"
+            app:destination="@id/doctorsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addDoctorFragment"
+        android:name="com.example.booking.AddDoctorFragment"
+        android:label="fragment_add_doctor"
+        tools:layout="@layout/fragment_add_doctor" >
+        <action
+            android:id="@+id/action_addDoctorFragment_to_doctorsFragment"
+            app:destination="@id/doctorsFragment" />
+    </fragment>
 </navigation>

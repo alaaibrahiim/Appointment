@@ -42,5 +42,16 @@
     <string name="qoutes4">HEALTHY TEETH</string>
     <string name="appointment">Appointment</string>
     <string name="chkbx">Remember Me</string>
+    <string name="admin">Enter as Admin</string>
+    <string name="user">Enter as User</string>
+    <string name="or">OR</string>
+    <string name="pass_ver">Verification!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add">ADD</string>
+    <string name="doc_name">Doctor Name</string>
+    <string name="address">Address</string>
+    <string name="speciality">Speciality</string>
+    <string name="logout">Logout</string>
 
 </resources>

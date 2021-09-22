@@ -8,72 +8,72 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
     <ImageView
-        android:id="@+id/deatilsImage"
+        android:id="@+id/img_DetailsImg"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:layout_marginTop="8dp"
-        android:layout_weight="1"
+        android:layout_height="250dp"
         android:src="@drawable/doctor3"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_DetailName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="61dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
-        android:text="@string/doctorName"
-        android:textColor="@color/my_color2"
-        android:textSize="25sp"
+        android:layout_marginTop="38dp"
+        android:text="DoctorName"
+        android:textColor="@color/appColor"
+        android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deatilsImage" />
+        app:layout_constraintTop_toBottomOf="@+id/img_DetailsImg" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_DetailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="6dp"
-        android:text="Graduated from faculty of dentistry with excellent grading in 1959
-then obtained his doctorate in 1998 in the field of oral and maxillofacial surgery and oral and periodontal
-diseases\nWork hours from 8am to 10pm\nThe examination price is 100$."
+        android:layout_marginTop="15dp"
+        android:text="Address"
         android:textColor="@color/appColor"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textStyle="normal"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_DetailName" />
+
+    <TextView
+        android:id="@+id/tv_DetailSpeciality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="61dp"
+        android:text="Speciality"
+        android:textColor="@color/appColor"
+        android:textSize="15sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_DetailName" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_DetailAppointment"
         android:layout_width="172dp"
         android:layout_height="73dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="12dp"
-        android:backgroundTint="@color/black"
-        android:text="@string/appointment"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="155dp"
+        android:layout_marginEnd="120dp"
+        android:backgroundTint="@color/appColor"
+        android:text="ِAppointment"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
+        app:layout_constraintTop_toBottomOf="@+id/tv_DetailSpeciality" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
